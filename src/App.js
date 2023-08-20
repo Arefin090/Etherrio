@@ -1,7 +1,5 @@
 import React from 'react';
 import Overview from './components/Overview';
-import MoreInfo from './components/MoreInfo';
-import Transactions from './components/Transactions';
 
 function App() {
 
