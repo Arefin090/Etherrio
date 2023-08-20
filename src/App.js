@@ -2,16 +2,17 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
-import BalanceSection from './components/BalanceSection';
-import TransactionGraph from './components/TransactionGraph';
+import TransactionHistory from './components/TransactionHistory';
+
+
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <SearchBar />
-      <BalanceSection />
-      <TransactionGraph />
+      <TransactionHistory />
+      
      
       {/* Other components will go here */}
     </div>
