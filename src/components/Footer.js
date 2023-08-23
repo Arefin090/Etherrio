@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 
 
-const footerStyles = {
+  const footerStyles = {
     backgroundColor: '#3f51b5', 
     padding: '3px',
     textAlign: 'center',
@@ -19,7 +19,7 @@ const footerStyles = {
             © 2023 Etherrio | All rights reserved
           </Typography>
           <div>
-            <a href="103517862@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <a href="mailto:103517862@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Typography variant="overline">Contact us</Typography>
             </a>
             
