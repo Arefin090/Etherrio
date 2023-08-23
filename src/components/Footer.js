@@ -3,17 +3,7 @@ import { Typography } from '@mui/material';
 
 
 
-const containerStyles = {
-    minHeight: '100vh', 
-    display: 'flex',
-    flexDirection: 'column',
-  };
-  
-  const contentStyles = {
-    flex: 1,
-  };
-  
-  const footerStyles = {
+const footerStyles = {
     backgroundColor: '#3f51b5', 
     padding: '3px',
     textAlign: 'center',
