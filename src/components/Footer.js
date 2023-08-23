@@ -2,8 +2,7 @@ import React from 'react';
 import { Typography } from '@mui/material';
 
 
-
-  const footerStyles = {
+    const footerStyles = {
     backgroundColor: '#3f51b5', 
     padding: '3px',
     textAlign: 'center',
