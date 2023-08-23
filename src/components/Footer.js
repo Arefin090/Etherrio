@@ -17,9 +17,9 @@ import { Typography } from '@mui/material';
             © 2023 Etherrio | All rights reserved
           </Typography>
           <div>
-            <Typography variant="overline">
-              Contact us
-            </Typography>
+            <a href="103517862@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Typography variant="overline">Contact us</Typography>
+            </a>
             
           </div>
         </div>
