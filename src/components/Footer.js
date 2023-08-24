@@ -1,9 +1,8 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-
-    const footerStyles = {
-    backgroundColor: '#3f51b5', 
+  const footerStyles = {
+    backgroundColor: '#5c6767', 
     padding: '3px',
     textAlign: 'center',
     color: '#fff', 
@@ -13,12 +12,11 @@ import { Typography } from '@mui/material';
     return (
       
         
-        <div style={footerStyles}>
-          <Typography variant="overline">
+        <div style={footerStyles} >  <Typography variant="overline">
             © 2023 Etherrio | All rights reserved
           </Typography>
-          <div>
-            <a href="mailto:103517862@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
+  <div>
+            <a href="mailto:103535741@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Typography variant="overline">Contact us</Typography>
             </a>
             
