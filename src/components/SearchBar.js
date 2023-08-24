@@ -2,7 +2,19 @@ import React from 'react';
 import { TextField, Container, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = () => {
+const SearchBar = ({ handleSearch }) => {
+    const [inputValue, setInputValue] = React.useState('');
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch(inputValue);
+        }
+    };
+
     return (
         <Container 
             style={{ 
@@ -14,6 +26,9 @@ const SearchBar = () => {
             }}
         >
             <TextField
+                value={inputValue}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
                 variant="outlined"
                 style={{
                     width: '50%', 
@@ -22,11 +37,11 @@ const SearchBar = () => {
                     }
                 }}
                 size="small"
-                placeholder="Enter wallet address or transaction ID"
+                placeholder="Enter wallet address or transaction ID(0x1234567890)"
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
-                            <IconButton>
+                            <IconButton onClick={() => handleSearch(inputValue)}>
                                 <SearchIcon />
                             </IconButton>
                         </InputAdornment>
