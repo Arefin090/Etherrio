@@ -10,6 +10,7 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+
 function App() {
   const [showDetails, setShowDetails] = useState(false);
   const BalanceRef = useRef(null);

@@ -15,4 +15,5 @@ const Navbar = ({ handleOverviewClick, handleTransactionsClick }) => {
     );
 }
 
+
 export default Navbar;
