@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-
   const footerStyles = {
     backgroundColor: '#5c6767', 
     padding: '3px',
@@ -11,24 +10,11 @@ import { Typography } from '@mui/material';
   
   const Footer = () => {
     return (
-      
-        
-        // <div style={footerStyles} >  <Typography variant="overline">
-        //     © 2023 Etherrio | All rights reserved
-        //   </Typography>
-        // <div>
-        //     <a href="mailto:103535741@student.swin.edu.au" style={{ textDecoration: 'none', color: 'inherit' }}>
-        //         <Typography variant="overline">Contact us</Typography>
-        //     </a>
-            
-        //   </div>
-        // </div>
         <footer class="footer">
           <div class = "container">
             <div class="row">
               <div class="footer-col">
                 <h4>Company</h4>
-                
                 <ul>
                   <li>About Us</li>
                   <li>Contact Us</li>
@@ -49,7 +35,6 @@ import { Typography } from '@mui/material';
                   <li></li>
                 </ul>
               </div>
-
             </div>
           </div>
         </footer>

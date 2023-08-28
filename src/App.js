@@ -9,7 +9,6 @@ import BackToTopButton from './components/BackToTopButton';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -43,7 +42,6 @@ function App() {
 
   return (
     <div className="App">
-        
       <BackToTopButton />
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
