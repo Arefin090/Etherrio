@@ -11,6 +11,8 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
+import Flow from './graph/ReactFlow';
+
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
@@ -55,6 +57,9 @@ function App() {
                   <>
                     <div ref={BalanceRef}>
                       <Balance />
+                    </div>
+                    <div>
+                      <Flow />
                     </div>
                     <div ref={transactionHistoryRef}>
                       <TransactionHistory />
