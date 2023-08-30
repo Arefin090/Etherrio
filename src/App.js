@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './global/Navbar';
 import SearchBar from './components/SearchBar';
 import TransactionHistory from './components/TransactionHistory';
 import Balance from './components/Balance';
-import Footer from './components/Footer';
+import Footer from './global/Footer';
 import BackToTopButton from './components/BackToTopButton';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
@@ -46,7 +46,7 @@ function App() {
         <BackToTopButton />
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <Navbar />
+          <Navbar showSpendings={showDetails} />
           <Routes>
             <Route path="/" element={
               <>
