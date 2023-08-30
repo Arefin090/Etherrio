@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Balance from './Balance';
 import TransactionHistory from './TransactionHistory';
-
+import Flow from '../graph/ReactFlow';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -77,6 +77,7 @@ export default function BalanceAndTransactionTabs() {
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Balance />
+          <Flow />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <TransactionHistory />

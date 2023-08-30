@@ -19,6 +19,7 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "react-swipeable-views": "^0.14.0",
+    "reactflow": "^11.8.3",
     "tailwindcss": "^3.3.3",
     "web-vitals": "^2.1.4"
   },
