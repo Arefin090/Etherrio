@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
@@ -9,7 +10,7 @@ import BackToTopButton from './components/BackToTopButton';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
+import Visualisation from './components/Visualisation';
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
@@ -34,35 +35,40 @@ function App() {
       transactionHistoryRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
 
   const darkTheme = createTheme({
     palette: { mode: 'dark' },
   });
 
   return (
-    <div className="App">
-      <BackToTopButton />
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <Navbar 
-          handleBalanceClick={handleBalanceClick} 
-          handleTransactionsClick={handleTransactionsClick} 
-        />
-        <SearchBar handleSearch={handleSearch} />
-        {showDetails && (
-          <>
-            <div ref={BalanceRef}>
-              <Balance />
-            </div>
-            <div ref={transactionHistoryRef}>
-              <TransactionHistory />
-            </div>
-          </>
-        )}
-        <Footer />
-      </ThemeProvider>
-    </div>
+    <Router>
+      <div className="App">
+        <BackToTopButton />
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <SearchBar handleSearch={handleSearch} />
+                {showDetails && (
+                  <>
+                    <div ref={BalanceRef}>
+                      <Balance />
+                    </div>
+                    <div ref={transactionHistoryRef}>
+                      <TransactionHistory />
+                    </div>
+                  </>
+                )}
+              </>
+            } />
+            <Route path="/visualisation" element={<Visualisation />} />
+          </Routes>
+          <Footer />
+        </ThemeProvider>
+      </div>
+    </Router>
   );
 }
 
