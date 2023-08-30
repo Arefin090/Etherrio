@@ -22,7 +22,7 @@ const SearchBar = ({ handleSearch }) => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '130vh'
+                height: '50vh'
             }}
         >
             <TextField
