@@ -4,10 +4,10 @@ const Item = ({Links,title}) => {
     return (
         <div className="text-left">
             <ul>
-                <h1 className="mb-1 font-semibold">{title}</h1>
+                <h1 className="text-white font-bold">{title}</h1>
                 {
                     Links.map((link) =>(
-                        <li key={link.name} className="text-gray-400">{link.name}</li>
+                        <li key={link.name} className="text-white">{link.name}</li>
                     ))
                 }
             </ul>

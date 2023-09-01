@@ -1,19 +1,19 @@
-export const PRODUCTS = [
+export const ABOUTUS = [
     { name: "About Us", link: "#" },
     { name: "Contact Us", link: "#" },
     { name: "Terms of Service", link: "#" },
   ];
-  export const RESOURCES = [
-    { name: "Status", link: "#" },
-    { name: "Wallet Support", link: "#" },
-    { name: "Exchange Support", link: "#" },
+  export const OURFIRM = [
+    { name: "Samuel Chin", link: "#" },
+    { name: "Md Arefin Newaz Sojol", link: "#" },
+    { name: "Mohammad Tousif Shahriar", link: "#" },
   ];
-  export const COMPANY = [
+  export const RESULTS = [
     { name: "Awards & Memberships", link: "#" },
     { name: "Success Numbers", link: "#" },
     { name: "Client Reviews", link: "#" },
   ];
-  export const SUPPORT = [
+  export const RESOURCES = [
     { name: "Read Our Blog", link: "#" },
     { name: "Our Newsletter", link: "#" },
     { name: "Guides", link: "#" },
