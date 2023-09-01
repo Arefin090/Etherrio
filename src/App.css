@@ -104,3 +104,9 @@ ul{
   color:#61dafb;
   padding-left: 10px;
 }
+
+@font-face {
+  font-family: "Light";
+  src: url("./fonts/Quicksand-Light.ttf") format("truetype");
+}
+
