@@ -9,8 +9,7 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
-import Flow from './graph/ReactFlow';
-
+import BalanceAndTransactionTabs from './components/BalanceAndTransactionTabs';
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
@@ -37,19 +36,7 @@ function App() {
             <Route path="/" element={
               <>
                 <SearchBar handleSearch={handleSearch} />
-                {showDetails && (
-                  <>
-                    <div ref={BalanceRef}>
-                      <Balance />
-                    </div>
-                    <div>
-                      <Flow />
-                    </div>
-                    <div ref={transactionHistoryRef}>
-                      <TransactionHistory />
-                    </div>
-                  </>
-                )}
+                {showDetails && <BalanceAndTransactionTabs />}
               </>
             } />
             <Route path="/visualisation" element={<Visualisation />} />
@@ -62,4 +49,3 @@ function App() {
 }
 
 export default App;
-
