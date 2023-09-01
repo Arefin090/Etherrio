@@ -5,9 +5,6 @@ import Navbar from './global/Navbar';
 import SearchBar from './components/SearchBar';
 import Footer from './global/footer/Footer';
 import BackToTopButton from './components/BackToTopButton';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
 import BalanceAndTransactionTabs from './components/BalanceAndTransactionTabs';
 import { Container, Typography } from '@mui/material';
@@ -39,7 +36,6 @@ function App() {
     <Router>
       <div className="App">
         <BackToTopButton />
-          <CssBaseline />
           <Navbar showSpendings={showDetails} />
           <Routes>
             <Route path="/" element={
