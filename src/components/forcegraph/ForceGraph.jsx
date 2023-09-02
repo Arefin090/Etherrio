@@ -12,7 +12,7 @@ const nodeOrigin = [0.5, 0.5];
 const defaultEdgeOptions = { style: { stroke: '#ff66aa', strokeWidth: 3 } };
 
 // generated secondary dummy nodes. Cycles through these values.
-const emojis = ['0x1234534...', '0x2354323...', '0x12354234...', '0x234655...', '0x1564343...]'];
+const emojis = ['0x987...', '0x876...', '0x654...', '0x234...', '0x156...]'];
 
 const randomEmoji = () => {
     return emojis[Math.floor(Math.random() * (emojis.length - 1))];
@@ -44,26 +44,17 @@ function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
 
     const onEdgeClick = useCallback(
         (evt, edge) => {
-            const childId = `${nodes.length + 1}`;
-            const childNode = {
-                id: childId,
-                position: { x: edge.sourcePosition.x + 100, y: edge.sourcePosition.y + 100 },
-                data: { label: randomEmoji() },
-                className: styles.node,
-            };
-            const childEdge = { id: `${edge.source}->${childId}`, source: edge.source, target: childId };
-
-            setNodes((nds) => [...nds, childNode]);
-            setEdges((eds) => [...eds, childEdge]);
+            evt.stopPropagation();
+            //alert(`Date: 01-02-2023 | Transferred 1 ETH between ${edge.id}`);
+            alert(`${edge.id} 1 ETH on 2023-02-01`)
         },
-        [nodes.length, setNodes, setEdges]
     );
 
 
     const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
     return (
-        <div style={{ width: "70%", height: "60vh" }}>
+        <div style={{ width: "100%", height: "80vh" }}>
             <ReactFlow 
                 nodes={nodes}
                 edges={edges} 
