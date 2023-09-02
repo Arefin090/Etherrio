@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Balance from './Balance';
-import TransactionHistory from './TransactionHistory';
+import React from "react";
+import PropTypes from "prop-types";
+import SwipeableViews from "react-swipeable-views";
+// import { useTheme } from "@mui/material/styles";
+// import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Balance from "./Balance";
+import TransactionHistory from "./TransactionHistory";
 import ForceGraph from './forcegraph/ForceGraph';
 
 function TabPanel(props) {
@@ -72,20 +72,9 @@ export default function BalanceAndTransactionTabs() {
           <Tab label="Transaction Map" {...a11yProps(0)} />
           <Tab label="Wallet" {...a11yProps(1)} />
         </Tabs>
-      </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <Balance />
-          <ForceGraph />
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          <TransactionHistory />
-        </TabPanel>
-      </SwipeableViews>
+        </SwipeableViews>
+      </Box>
+      {value === 0 ? <ForceGraph/> : <><Balance /> <TransactionHistory /></>}
     </Box>
   );
 }
