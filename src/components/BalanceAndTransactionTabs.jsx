@@ -40,35 +40,37 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
+    "aria-controls": `full-width-tabpanel-${index}`,
   };
 }
 
 export default function BalanceAndTransactionTabs() {
-  const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
-
   return (
-    <Box sx={{ bgcolor: 'background.paper', width: '100%', marginBottom: '30vh', position: "static"}}>
-      <AppBar position="static">
+    <Box
+      sx={{
+        bgcolor: "background.paper",
+        width: "100%",
+        marginBottom: "30vh",
+      }}
+    >
+      <Box width={'100%'} mb={4} px={12}>
+        <SwipeableViews>
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
+          indicatorColor="primary"
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Balance" {...a11yProps(0)} />
-          <Tab label="Transaction History" {...a11yProps(1)} />
+          <Tab label="Transaction Map" {...a11yProps(0)} />
+          <Tab label="Wallet" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews

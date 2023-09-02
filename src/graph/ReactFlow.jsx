@@ -17,6 +17,7 @@ import initialEdges from "./edges.jsx";
 import CircleNode from "./CircleNode";
 import OuterNode from "./OuterNode";
 import InnerNode from "./InnerNode";
+import { CenterFocusStrong } from "@mui/icons-material";
 
 // edge line styling
 const connectionLineStyle = { stroke: "#fff", pointerEvents: "all" };
@@ -28,6 +29,9 @@ const nodeTypes = {
   outer: OuterNode,
   inner: InnerNode
 };
+
+// edge data output
+const onElementClick = (event, element) => console.log("click", element);
 
 function Flow() {
   const [nodes, setNodes] = useState(initialNodes);
@@ -47,20 +51,20 @@ function Flow() {
   );
 
   return (
-    <div style={{ width: "100%", height: "75vh" }}>
+    <div style={{ width: "70%", height: "75vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
     <ReactFlow
       nodes={nodes}
       edges={edges}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
+      onElementClick={onElementClick}
 
       //circle, inner, outer node properties
       nodeTypes={nodeTypes}
       connectionLineStyle={connectionLineStyle}
       snapToGrid={true}
       snapGrid={snapGrid}
-
     >
       <MiniMap />
       <Controls />
