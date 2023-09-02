@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Balance from "./Balance";
 import TransactionHistory from "./TransactionHistory";
-import { ReactFlow } from "reactflow";
+import ForceGraph from './forcegraph/ForceGraph';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -74,7 +74,7 @@ export default function BalanceAndTransactionTabs() {
         </Tabs>
         </SwipeableViews>
       </Box>
-      {value === 0 ? <ReactFlow/> : <><Balance /> <TransactionHistory /></>}
+      {value === 0 ? <ForceGraph/> : <><Balance /> <TransactionHistory /></>}
     </Box>
   );
 }

@@ -8,7 +8,7 @@ export default memo(({ data, isConnectable }) => {
         width: "100px",
         height: "100px",
         borderRadius: "50%",
-        background: "#4595AA",
+        background: "#168FFF",
         display: "flex",
         alignItems: "center",
         justifyContent: "center"

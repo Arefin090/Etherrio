@@ -5,6 +5,9 @@ import Navbar from './global/Navbar';
 import SearchBar from './components/SearchBar';
 import Footer from './global/footer/Footer';
 import BackToTopButton from './components/BackToTopButton';
+import { createTheme } from '@mui/material/styles';
+// import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
 import FeaturesSection from './components/Features';
 import BalanceAndTransactionTabs from './components/BalanceAndTransactionTabs';
@@ -41,6 +44,8 @@ function App() {
     <Router>
       <div className="App">
         <BackToTopButton />
+        {/* <ThemeProvider theme={darkTheme}> */}
+          <CssBaseline />
           <Navbar showSpendings={showDetails} />
           <Routes>
             <Route path="/" element={
@@ -64,7 +69,7 @@ function App() {
             <Route path="/visualisation" element={<Visualisation />} />
           </Routes>
           <Footer />
-        
+        {/* </ThemeProvider> */}
       </div>
     </Router>
   );

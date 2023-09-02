@@ -1,4 +1,3 @@
-// InnerNode.jsx
 import React, { memo } from "react";
 import { Handle } from "reactflow";
 
@@ -12,7 +11,7 @@ export default memo(({ data, isConnectable }) => {
         background: "#F74141",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <Handle
