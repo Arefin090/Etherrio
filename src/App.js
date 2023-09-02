@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar';
 import Footer from './global/footer/Footer';
 import BackToTopButton from './components/BackToTopButton';
 import Visualisation from './components/Visualisation';
+import FeaturesSection from './components/Features';
 import BalanceAndTransactionTabs from './components/BalanceAndTransactionTabs';
 import { Container, Typography } from '@mui/material';
 import DiamondIcon from '@mui/icons-material/Diamond';
@@ -17,8 +18,11 @@ function App() {
 
   const [showTag, setShowTag] = useState(false);
 
+  const [showFeatures, setShowFeatures] = useState(true);
+
   const handleButtonClick = () => {
     setShowTag(!showTag);
+    setShowFeatures(false);
   };
 
   const handleSearch = (inputValue) => {
@@ -27,6 +31,7 @@ function App() {
       setShowDetails(true);
     }
   };
+
 
   // const darkTheme = createTheme({
   //   palette: { mode: 'dark' },
@@ -48,10 +53,10 @@ function App() {
                 </div>
                 <div>
                   <section style={{fontSize:"20px", fontFamily:"Light", color:"white"}}><em>Step into the fascinating realm of Ethereum, a groundbreaking blockchain platform that has revolutionized the way we think about money, contracts, and decentralized applications.</em></section>
-                  <Button variant="container" style={{backgroundColor:'#b22a00',color:'white'}} onClick={handleButtonClick}>Getting Started</Button>
+                  {showTag ? null :(<Button variant="container" style={{backgroundColor:'#b22a00',color:'white'}} onClick={handleButtonClick}>Getting Started</Button>)}
                 </div>
                 </Container>
-      
+                {showFeatures && <FeaturesSection />}
                 {showTag && <SearchBar handleSearch={handleSearch} />}
                 {showDetails && <BalanceAndTransactionTabs />}
               </>
@@ -66,4 +71,3 @@ function App() {
 }
 
 export default App;
-
