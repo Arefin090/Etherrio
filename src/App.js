@@ -19,7 +19,7 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="App">
+    <div className="App" >
       <BackToTopButton />
       <CssBaseline />
       <Navbar showSpendings={showDetails} />

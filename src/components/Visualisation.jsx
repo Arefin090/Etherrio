@@ -106,7 +106,7 @@ export default function Visualisation() {
           
           
         </div>
-        <section style={{width:"800px"}}>
+        <section style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '80px'}}>
           <Typography variant="body1" align="center" gutterBottom>
             This pie chart displays the distribution of yearly spending in AUD
           </Typography>
