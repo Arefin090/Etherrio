@@ -1,3 +1,5 @@
+/* Transaction table */
+
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -8,6 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
+// transaction table setup
 const columns = [
   {
     id: 'date',
@@ -59,6 +62,7 @@ function createData(date, transaction, from, to, value, fee) {
   return { date, transaction, from, to, value, fee };
 }
 
+// dummy data for transaction history
 const rows = [
   createData('2023-08-23', '0x91d6dfcfa17788..', 'builder', 'lidowallet', 5.423, 0.0003234),
   createData('2023-08-22', '0xabcdef12345678..', 'builder', 'lidowallet', 10.123, 0.0012345),
@@ -83,6 +87,7 @@ const rows = [
   createData('2023-03-23', '0xcdef1234567890..', 'builder', 'moonrocket', 18.888, 0.0009999),
 ];
 
+// sticky header for table
 export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -97,8 +102,8 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden', marginTop: '40px' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden', marginTop: '40px', left: 0 }}>
+      <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>

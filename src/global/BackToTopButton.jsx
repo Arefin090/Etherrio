@@ -43,7 +43,7 @@ const BackToTopButton = () => {
                     width: "50px",
                     fontSize: "24px",
                     borderRadius: "50%",
-                    backgroundColor: "#d4d4d4",
+                    backgroundColor: "#168FFF",
                     border: "none",
                     cursor: "pointer",
                     boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
