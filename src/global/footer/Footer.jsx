@@ -1,6 +1,7 @@
 import React from 'react';
 import '../.././App.css'
 import ItemsContainer from './ItemsContainer';
+import Container from '@mui/material/Container';
 import { ReactComponent as Icon1 } from './images/fb.svg';
 import { ReactComponent as Icon2 } from './images/twitter.svg';
 import { ReactComponent as Icon3 } from './images/ig.svg';
@@ -8,8 +9,9 @@ import { ReactComponent as Icon4 } from './images/yt.svg';
 import { ReactComponent as Icon5 } from './images/linkedin.svg';
 
 const Footer = () => {
-  return (<footer style={{backgroundColor:'#123397'}}>
-    <div style={{ display: 'flex', alignItems: 'center'}} className='flex justify-center items-center space-x-4'>
+  return (<footer style={{backgroundColor:'#123397', position:'sticky', width:'100%', boxSizing: 'border-box'}}>
+    <Container maxWidth="xl">
+  <div style={{ display: 'flex', alignItems: 'center'}} className='flex justify-center items-center space-x-4'>
       <a href="https://www.facebook.com/" target="_blank">
         <Icon1 style={{width:"25",height:"25",marginTop:"30"}}/>
       </a>
@@ -37,6 +39,7 @@ const Footer = () => {
       © Etherrio - All rights reserved.
       </span>
     </div>
+    </Container>
   </footer>
   );
 };
