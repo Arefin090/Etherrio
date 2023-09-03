@@ -11,7 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import {Link} from 'react-router-dom';
 
@@ -21,7 +20,6 @@ const settings = ['Profile', 'Your Wallet', 'Logout'];
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [walletAddressEntered, setWalletAddressEntered] = React.useState(false); // New state variable
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

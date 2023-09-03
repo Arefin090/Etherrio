@@ -1,8 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
-// import { useTheme } from "@mui/material/styles";
-// import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -60,7 +57,6 @@ export default function BalanceAndTransactionTabs() {
       }}
     >
       <Box width={'100%'} mb={4} px={12}>
-        <SwipeableViews>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -72,7 +68,6 @@ export default function BalanceAndTransactionTabs() {
           <Tab label="Transaction Map" {...a11yProps(0)} />
           <Tab label="Wallet" {...a11yProps(1)} />
         </Tabs>
-        </SwipeableViews>
       </Box>
       {value === 0 ? <ForceGraph/> : <><Balance /> <TransactionHistory /></>}
     </Box>

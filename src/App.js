@@ -9,13 +9,11 @@ import Visualisation from './components/Visualisation';
 import Home from './components/Home';
 
 function App() {
-  const [showDetails, setShowDetails] = useState(false);
-
   return (
     <div className="App" >
       <BackToTopButton />
       <CssBaseline />
-      <Navbar showSpendings={showDetails} />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='Overview' element={<Home />} />

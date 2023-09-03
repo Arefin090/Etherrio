@@ -79,7 +79,7 @@ function Home() {
                 style={{ backgroundColor: "#b22a00", color: "white", marginTop: "20px"}}
                 onClick={handleButtonClick}
                 >
-                Getting Started
+                Click to Get Started
                 </Button>
             )}
             </div>
