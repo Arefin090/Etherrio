@@ -1,3 +1,5 @@
+/* Desc: Table for displaying selected transaction between graph nodes. Currently replaced with dummy alert */
+
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';

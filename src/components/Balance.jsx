@@ -1,7 +1,10 @@
+/* Balance list for summary data of searched wallet */ 
+
 import React, { useState } from 'react';
 import { Button, Card, CardContent, Typography, Collapse } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+// Overview component
 export default function Overview() {
     const [expanded, setExpanded] = useState(false);
 
@@ -9,6 +12,7 @@ export default function Overview() {
         setExpanded(!expanded);
     };
 
+    // balance of wallet organized via a list. Data is hardcoded for now.
     return (
         <div style={{ marginTop: '20px', marginBottom: '50px', maxWidth: '600px', margin: 'auto' }}>
             <Card variant="outlined">
