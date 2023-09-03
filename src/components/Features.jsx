@@ -2,8 +2,6 @@ import React from "react";
 import { ReactComponent as Features1} from '../assets/encryption.svg';
 import { ReactComponent as Features2} from '../assets/nft.svg';
 import { ReactComponent as Features3} from '../assets/wallet.svg';
-import { Container } from "@mui/material";
-import { Typography } from '@mui/material';
 import '../App.css'
 
 const FeaturesSection = () => {
