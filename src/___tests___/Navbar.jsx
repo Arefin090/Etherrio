@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import DiamondIcon from '@mui/icons-material/Diamond';
-import {Link} from 'react-router-dom';
+
 
 const pages = ['Overview', 'Transactions', 'Spendings', 'About'];
 const settings = ['Profile', 'Your Wallet', 'Logout'];
@@ -92,12 +92,7 @@ function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    {/* using BrowserRouter (react-router-dom) for routes in index.js*/}
-                    <Link to={`/${page}`}> 
-                      {page}
-                    </Link>
-                  </Typography>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -128,10 +123,7 @@ function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {/* using BrowserRouter (react-router-dom) for routes in index.js*/}
-                <Link to={`/${page}`}> 
-                    {page}
-                </Link>
+                {page}
               </Button>
             ))}
           </Box>

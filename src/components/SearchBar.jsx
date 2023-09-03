@@ -37,7 +37,7 @@ const SearchBar = ({ handleSearch }) => {
         variant="outlined"
         style={{
           width: '50%', 
-          '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+          '&:hover .MuiOutlinedInputRoot .MuiOutlinedInputNotchedOutline': {
             borderColor: 'blue'
           }
         }}

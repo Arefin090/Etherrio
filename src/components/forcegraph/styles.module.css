@@ -1,3 +1,4 @@
+/* Styling for forcegraph nodes and edges*/
 .node {
   border-radius: 50%;
   height: 150px;
@@ -17,8 +18,5 @@
 }
 
 .edge {
-  font-size: 30px;
-  style {
-    stroke: '#FFFFFF'
-  }
+  font-size: 5px;
 }
