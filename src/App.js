@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './global/Navbar';
 import Footer from './global/footer/Footer';
-import BackToTopButton from './components/BackToTopButton';
+import BackToTopButton from './global/BackToTopButton';
 import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
 import Home from './components/Home';

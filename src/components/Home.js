@@ -6,7 +6,6 @@ import BalanceAndTransactionTabs from './BalanceAndTransactionTabs';
 import SearchBar from './SearchBar';
 import { Container, Typography } from '@mui/material';
 import DiamondIcon from '@mui/icons-material/Diamond';
-import video from '../videos/wallpaper.mp4';
 import Button from '@mui/material/Button';
 
 function Home() {
@@ -28,20 +27,63 @@ function Home() {
       
     return (
       <div>
-        <Container>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}} className='flex justify-center items-center space-x-0.0'>
-                <video autoPlay loop muted style={{position:"absolute", width:"100%", left:"50%", top:"20%", height:"30%", objectFit:"cover", transform:"translate(-50%, -50%)", zIndex:"-1"}}><source src={video} type="video/mp4"/></video>
-                <DiamondIcon style={{width:"70",height:"70",marginTop:"55", marginLeft: "-10px",color:"white", fontWeight:"bold"}}></DiamondIcon>
-                <p style={{fontSize:"80px", marginTop:"40px",fontFamily:"Light",color:"white", fontWeight:"bold"}}>Etherrio</p>
-            </div>
-            <div>
-                <section style={{fontSize:"20px", fontFamily:"Light", color:"white"}}>
-                    <em>Step into the fascinating realm of Ethereum, a groundbreaking blockchain platform that has revolutionized the way we think about money, contracts, and decentralized applications.</em>
-                </section>
-                <br></br>
-                {showTag ? null :(<Button variant="container" style={{backgroundColor:'#b22a00',color:'white'}} onClick={handleButtonClick}>Getting Started</Button>)}
-            </div>
-        </Container>
+               <Container>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    className="flex justify-center items-center space-x-0.0"
+                  >
+                    <DiamondIcon
+                      style={{
+                        width: "70",
+                        height: "70",
+                        marginTop: "55",
+                        marginLeft: "-10px",
+                        color: "black",
+                        fontWeight: "bold",
+                      }}
+                    ></DiamondIcon>
+                    <p
+                      style={{
+                        fontSize: "80px",
+                        marginTop: "40px",
+                        fontFamily: "Light",
+                        color: "black",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Etherrio
+                    </p>
+                  </div>
+                  <div>
+                    <section
+                      style={{
+                        fontSize: "20px",
+                        fontFamily: "Light",
+                        color: "black",
+                      }}
+                    >
+                      <em>
+                        Step into the fascinating realm of Ethereum, a
+                        groundbreaking blockchain platform that has
+                        revolutionized the way we think about money, contracts,
+                        and decentralized applications.
+                      </em>
+                    </section>
+                    {showTag ? null : (
+                      <Button
+                        variant="container"
+                        style={{ backgroundColor: "#b22a00", color: "white", marginTop: "20px"}}
+                        onClick={handleButtonClick}
+                      >
+                        Getting Started
+                      </Button>
+                    )}
+                  </div>
+                </Container>
         <Container>
             {showFeatures && <FeaturesSection />}
         </Container>
