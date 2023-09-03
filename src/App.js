@@ -4,7 +4,6 @@ import './App.css';
 import Navbar from './global/Navbar';
 import Footer from './global/footer/Footer';
 import BackToTopButton from './global/BackToTopButton';
-import CssBaseline from '@mui/material/CssBaseline';
 import Visualisation from './components/Visualisation';
 import Home from './components/Home';
 
@@ -12,7 +11,6 @@ function App() {
   return (
     <div className="App" >
       <BackToTopButton />
-      <CssBaseline />
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
