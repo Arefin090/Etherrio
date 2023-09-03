@@ -1,5 +1,7 @@
+/* Force Graph of wallet and directly connected nodes. Expands as you explore outside nodes. */
+
 import React, { useCallback } from 'react';
-import ReactFlow, { Background, Panel, ReactFlowProvider, useNodesState, useEdgesState, useReactFlow, addEdge, Controls, } from 'reactflow';
+import ReactFlow, { Background, Panel, ReactFlowProvider, useNodesState, useEdgesState, addEdge, Controls, } from 'reactflow';
 import 'reactflow/dist/style.css';
 import useForceLayout from './useForceLayout';
 import { initialNodes, initialEdges } from './initialElements';
@@ -8,30 +10,34 @@ import styles from './styles.module.css';
 // hides attribution. Allowed for educational accounts.
 const proOptions = { account: 'paid-pro', hideAttribution: true };
 
+// nodeOrigin set to center of node. Default is top left corner.
 const nodeOrigin = [0.5, 0.5];
 const defaultEdgeOptions = { style: { stroke: '#ff66aa', strokeWidth: 3 } };
 
 // generated secondary dummy nodes. Cycles through these values.
-const emojis = ['0x987...', '0x876...', '0x654...', '0x234...', '0x156...]'];
+const dummyNodes = ['0x987...', '0x876...', '0x654...', '0x234...', '0x156...]'];
 
-const randomEmoji = () => {
-    return emojis[Math.floor(Math.random() * (emojis.length - 1))];
+// returns random data from list. Used to generate dummy data.
+const randomData = () => {
+    return dummyNodes[Math.floor(Math.random() * (dummyNodes.length - 1))];
 };
 
+// main ReactFlow component. High negative strength set for more spread out nodes.
 function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
-    const { project } = useReactFlow();
+    // const { project } = useReactFlow();
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
     useForceLayout({ strength, distance });
 
+    // memoized callback to add nodes onclick. Only changes if one of the inputs has changed.
     const onNodeClick = useCallback(
         (evt, node) => {
             const childId = `${nodes.length + 1}`;
             const childNode = {
                 id: childId,
                 position: { x: node.position.x + 100, y: node.position.y + 100 },
-                data: { label: randomEmoji() },
+                data: { label: randomData() },
                 className: styles.node,
         };
         const childEdge = { id: `${node.id}->${childId}`, source: node.id, target: childId };
@@ -42,19 +48,20 @@ function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
         [nodes.length, setNodes, setEdges]
     );
 
+    // alert on edge click. Dummy data for now.
     const onEdgeClick = useCallback(
         (evt, edge) => {
             evt.stopPropagation();
             //alert(`Date: 01-02-2023 | Transferred 1 ETH between ${edge.id}`);
-            alert(`${edge.id} 1 ETH on 2023-02-01`)
+            alert(`Wallets ${edge.id} transferred 1 ETH on 2023-02-01`)
         },
     );
 
-
+    // memoized callback to add edge between nodes. Only changes if one of the inputs has changed.
     const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
     return (
-        <div style={{ width: "100%", height: "80vh" }}>
+        <div style={{ width: "95%", height: "60vh" }}>
             <ReactFlow 
                 nodes={nodes}
                 edges={edges} 
@@ -71,6 +78,8 @@ function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
                 <Panel position="top-left">
                     <p><b>How to use:</b> Click any node to generate most recent wallet transaction to that node. </p>
                     <p>Clicking a node again will generate second most recent wallet transactions, then third most recent, etc.</p>
+                    <p>Clicking an edge will display the date and amount of the transaction.</p>
+                    <p>Click Wallet tab to view detailed information</p>
                 </Panel>
                 <Background />
             </ReactFlow>
@@ -78,6 +87,7 @@ function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
         </div>
     );
 }
+
 function ReactFlowWrapper(props) {
     return (<ReactFlowProvider>
       <ReactFlowPro {...props}/>
