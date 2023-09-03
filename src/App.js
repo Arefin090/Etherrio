@@ -1,10 +1,3 @@
-/* React Project by:
-  Samuel Chin - 4154932
-  Md Arefin Newaz Sojol - 
-  Mohammad Tousif Shahriar - 
-  For COS30049 - Creating Web Applications, Assignment 1-3
-*/
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
