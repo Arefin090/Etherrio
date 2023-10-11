@@ -48,7 +48,7 @@ const BackToTopButton = () => {
                     cursor: "pointer",
                     boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
                     zIndex: "1000",
-                    pointerEvents: "auto",
+                    pointerEvents: 'auto',
                 }}
                 onClick={goToTop}
             >
