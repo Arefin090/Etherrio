@@ -1,3 +1,4 @@
+
 require('dotenv').config({ path: './credentials.env' });
 const express = require('express');
 const neo4j = require('neo4j-driver');
@@ -27,24 +28,29 @@ app.get('/', (req, res) => {
 
 // API endpoint to fetch transaction data from Neo4j
 app.get('/api/transactions', async (req, res) => {
-  const session = driver.session();
-  try {
-    //Cypher query
-    const query = `
-      MATCH (from:Address {from_address: '0x8d08aad4b2bac2bb761ac4781cf62468c9ec47b4'})-[r:SENT]->(to:Address)
-      RETURN r.hash AS Transaction, from.from_address AS from_address, to.to_address AS to_address, r.value AS Value, r.transaction_fee AS Fee;
-    `;
-    const result = await session.run(query);
-    const data = result.records.map(record => record.toObject());
-    res.json(data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  } finally {
-    await session.close();
-  }
-});
+    const session = driver.session();
+    const address = req.query.address; // Get address from query parameter
+    
+    try {
+      const query = `
+        MATCH (from:Address {from_address: "${address}"})-[r:SENT]->(to:Address)
+        RETURN r.hash AS Transaction, from.from_address AS from_address, to.to_address AS to_address, r.value AS Value,r.transaction_fee AS Fee
+        UNION
+        MATCH (to:Address {to_address: "${address}"})<-[r:SENT]-(from:Address)
+        RETURN r.hash AS Transaction, from.from_address AS from_address, to.to_address AS to_address, r.value AS Value,r.transaction_fee AS Fee;
+      `;
+      const result = await session.run(query);
+      const data = result.records.map(record => record.toObject());
+      res.json(data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    } finally {
+      await session.close();
+    }
+  });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+

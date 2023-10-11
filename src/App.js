@@ -5,7 +5,7 @@ import Navbar from './global/Navbar';
 import Footer from './global/footer/Footer';
 import BackToTopButton from './global/BackToTopButton';
 import Visualisation from './components/Visualisation';
-import Home from './components/Home';
+import Home from './global/Home';
 
 function App() {
   return (

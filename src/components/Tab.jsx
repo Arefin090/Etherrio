@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Balance from "./Balance";
-import TransactionHistory from "./TransactionHistory";
+import TransactionHistory from "./TransactionTable";
 import ForceGraph from './forcegraph/ForceGraph';
 
 function TabPanel(props) {
@@ -41,7 +41,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BalanceAndTransactionTabs() {
+export default function BalanceAndTransactionTabs({searchInput}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -69,7 +69,7 @@ export default function BalanceAndTransactionTabs() {
           <Tab label="Wallet" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      {value === 0 ? <ForceGraph/> : <><Balance /> <TransactionHistory /></>}
+      {value === 0 ? <ForceGraph/> : <><Balance address={searchInput} /> <TransactionHistory searchInput={searchInput} /></>}
     </Box>
   );
 }
