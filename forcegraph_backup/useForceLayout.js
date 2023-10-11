@@ -9,7 +9,7 @@ const elementCountSelector = (state) => state.nodeInternals.size + state.edges.l
 const nodesInitializedSelector = (state) => Array.from(state.nodeInternals.values()).every((node) => node.width && node.height) && state.nodeInternals.size;
 
 // default strength and distance values before reactflow overrides.
-function useForceLayout({ strength = -5000, distance = 10000 }) {
+function useForceLayout({ strength = -1000, distance = 150 }) {
     const elementCount = useStore(elementCountSelector);
     const nodesInitialized = useStore(nodesInitializedSelector);
     const { setNodes, getNodes, getEdges } = useReactFlow();
@@ -45,7 +45,7 @@ function useForceLayout({ strength = -5000, distance = 10000 }) {
                 setNodes(simulationNodes.map((node) => ({
                     id: node.id,
                     data: node.data,
-                    position: { x: node.x ?? 100, y: node.y ?? 0 },
+                    position: { x: node.x ?? 0, y: node.y ?? 0 },
                     className: node.className,
             })));
         });

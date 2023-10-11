@@ -36,7 +36,7 @@ function ReactFlowPro({ strength = -5000, distance = 300 } = {}) {
             const childId = `${nodes.length + 1}`;
             const childNode = {
                 id: childId,
-                position: { x: node.position.x + 0, y: node.position.y + 0 },
+                position: { x: node.position.x + 100, y: node.position.y + 100 },
                 data: { label: randomData() },
                 className: styles.node,
         };
