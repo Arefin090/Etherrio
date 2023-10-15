@@ -85,21 +85,17 @@ export const Footer = () => (
             <div className="tab-content overflow-hidden leading-normal">
               <ul className="w-full flex flex-col text-gray-700 list-none p-0 font-thin text-left">
                 <li>
-                  <a
-                    href="#"
-                    className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
-                  >
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Features
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Documentation
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
-                  >
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     FAQ
                   </a>
                 </li>
@@ -140,17 +136,17 @@ export const Footer = () => (
             <div className="tab-content overflow-hidden leading-normal">
               <ul className="w-full flex flex-col text-gray-700 list-none p-0 font-thin text-left">
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Terms of Service
                   </a>
                 </li>
@@ -191,17 +187,17 @@ export const Footer = () => (
             <div className="tab-content overflow-hidden leading-normal">
               <ul className="w-full flex flex-col text-gray-700 list-none p-0 font-thin text-left">
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Samuel Chin
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Md Arefin Newaz Sojol
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Mohammad Tousif Shahriar
                   </a>
                 </li>
@@ -242,17 +238,17 @@ export const Footer = () => (
             <div className="tab-content overflow-hidden leading-normal">
               <ul className="w-full flex flex-col text-gray-700 list-none p-0 font-thin text-left">
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+                  <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                     Newsletter
                   </a>
                 </li>
@@ -313,17 +309,17 @@ export const Footer = () => (
               Product
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Features
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Documentation
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 FAQ
               </a>
             </li>
@@ -333,17 +329,17 @@ export const Footer = () => (
               Company
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Terms of Service
               </a>
             </li>
@@ -353,17 +349,17 @@ export const Footer = () => (
               Developers
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Samuel Chin
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Md Arefin Newaz Sojol
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Mohammad Tousif Shahriar
               </a>
             </li>
@@ -373,17 +369,17 @@ export const Footer = () => (
               Explore
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Contact Us
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">
+              <a href="#" className="inline-block py-2 pl-3 pr-5 text-gray-400 hover:text-white no-underline">
                 Newsletter
               </a>
             </li>
