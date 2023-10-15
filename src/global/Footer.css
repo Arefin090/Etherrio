@@ -1,0 +1,36 @@
+/* Tab content - closed */
+.tab-content {
+    max-height: 0;
+    -webkit-transition: max-height 0.35s;
+    -o-transition: max-height 0.35s;
+    transition: max-height 0.35s;
+  }
+  
+  /* :checked - resize to full height */
+  .tab input:checked ~ .tab-content {
+    max-height: 100vh;
+  }
+  
+  /* Label formatting when open */
+  .tab input:checked + label {
+    border-left-width: 1px; 
+    border-color: white;
+  }
+  
+  /* Icon */
+  .tab .label .icon {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    transform-origin: center center;
+  }
+  
+  /* Open Multiple Icon Formatting - Open */
+  .tab input[type="checkbox"]:checked + .label .icon {
+    transform: rotate(135deg);
+  }
+  
+  /* List Transition */
+  ul a {
+    transition: color 0.5s ease;
+  }
