@@ -43,6 +43,7 @@ const colors = {
   pink: "bg-pink-50 text-pink-500",
 };
 
+
 // Resource Menu Icons and Descriptions
 const navListMenuItems = [
   {
@@ -114,11 +115,11 @@ function NavListMenu() {
   const renderItems = navListMenuItems.map(
     ({ icon, title, description, color }, key) => (
       <a href="#" key={key}>
-        <MenuItem className="flex items-center gap-3 rounded-lg">
-          <div className={`rounded-lg p-5 ${colors[color]}`}>
+        <MenuItem className="flex items-center gap-3 rounded-lg hover:bg-gray-200">
+          <div className={`rounded-lg p-5 mt-2 ${colors[color]}`}>
             {React.createElement(icon, {
               strokeWidth: 2,
-              className: "h-6 w-6",
+              className: "h-5 w-6",
             })}
           </div>
           <div>
@@ -150,7 +151,7 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-normal">
             <ListItem
-              className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3"
+              className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3  hover:bg-gray-600"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -193,7 +194,7 @@ function NavList() {
         color="blue-gray"
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3">
+        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3 hover:bg-gray-600">
           <CubeTransparentIcon className="h-[18px] w-[18px]" />
           Blockchain
         </ListItem>
@@ -206,7 +207,7 @@ function NavList() {
         color="blue-gray"
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3">
+        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3 hover:bg-gray-600">
           <UserCircleIcon className="h-[18px] w-[18px]" />
           Account
         </ListItem>
@@ -247,7 +248,7 @@ export function NavbarMenu() {
               textDecoration: 'none',
             }}
           >
-            Etherrio
+            <a href="/">Etherrio</a>
           </Typography>
         </div>
 
@@ -255,10 +256,10 @@ export function NavbarMenu() {
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex ">
-          <Button variant="text" size="sm" color="blue-gray" >
+          <Button variant="text" size="sm" color="blue-gray" className="hover:bg-blue-500" >
             Sign In
           </Button>
-          <Button variant="gradient" size="sm" className="bg-gray-500">
+          <Button variant="gradient" size="sm" className="bg-gray-500 hover:bg-blue-800">
             Sign Up
           </Button>
         </div>
@@ -278,10 +279,10 @@ export function NavbarMenu() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button variant="outlined" size="sm" color="blue-gray" fullWidth className="text-gray-900">
+          <Button variant="outlined" size="sm" color="blue-gray" fullWidth className="text-gray-900 hover:bg-blue-500">
             Sign In
           </Button>
-          <Button variant="gradient" size="sm" fullWidth className="bg-gray-500">
+          <Button variant="gradient" size="sm" fullWidth className="bg-gray-800 hover:bg-blue-800">
             Sign Up
           </Button>
         </div>
