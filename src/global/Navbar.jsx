@@ -1,54 +1,245 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+import React from "react";
+import {
+  Navbar,
+  Collapse,
+  Typography,
+  Button,
+  IconButton,
+  List,
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Chip,
+} from "@material-tailwind/react";
+import {
+  ChevronDownIcon,
+  UserCircleIcon,
+  CubeTransparentIcon,
+  Bars3Icon,
+  XMarkIcon,
+  FlagIcon,
+  ChatBubbleOvalLeftIcon,
+  UsersIcon,
+  FolderIcon,
+  Square3Stack3DIcon,
+  RocketLaunchIcon,
+  FaceSmileIcon,
+  PuzzlePieceIcon,
+  GiftIcon,
+} from "@heroicons/react/24/outline";
 import DiamondIcon from '@mui/icons-material/Diamond';
-import {Link} from 'react-router-dom';
 
-const pages = ['Overview', 'Transactions', 'Spendings', 'About'];
-const settings = ['Profile', 'Your Wallet', 'Logout'];
+// Resource Menu Colors
+const colors = {
+  blue: "bg-blue-50 text-blue-500",
+  orange: "bg-orange-50 text-orange-500",
+  green: "bg-green-50 text-green-500",
+  "blue-gray": "bg-blue-gray-50 text-blue-gray-500 bg-gray-300",
+  purple: "bg-purple-50 text-purple-500",
+  teal: "bg-teal-50 text-teal-500",
+  cyan: "bg-cyan-50 text-cyan-500",
+  pink: "bg-pink-50 text-pink-500",
+};
 
-function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+// Resource Menu Icons and Descriptions
+const navListMenuItems = [
+  {
+    color: "blue",
+    icon: FlagIcon,
+    title: "About Us",
+    description: "Learn about our story and our mission statement.",
+  },
+  {
+    color: "orange",
+    icon: ChatBubbleOvalLeftIcon,
+    title: "Opportunities",
+    description: "Investment resources",
+  },
+  {
+    color: "green",
+    icon: UsersIcon,
+    title: (
+      <div className="flex items-center gap-1">
+        Careers{" "}
+        <Chip
+          size="sm"
+          color="green"
+          variant="ghost"
+          value="We're hiring!"
+          className="capitalize"
+        />
+      </div>
+    ),
+    description: "We are always looking for talented people. Join us!",
+  },
+  {
+    color: "blue-gray",
+    icon: FolderIcon,
+    title: "Newsletter",
+    description: "Subscribe to our newsletter to get the latest news.",
+  },
+  {
+    color: "purple",
+    icon: RocketLaunchIcon,
+    title: "International opportunities",
+    description: "We are expanding to other countries.",
+  },
+  {
+    color: "teal",
+    icon: FaceSmileIcon,
+    title: "Knowledge base",
+    description: "Ask questions and get answers from our experts.",
+  },
+  {
+    color: "cyan",
+    icon: PuzzlePieceIcon,
+    title: "Guides",
+    description: "Learn how to use our platform with ease.",
+  },
+  {
+    color: "pink",
+    icon: GiftIcon,
+    title: "API",
+    description: "Documentation for every single API that you will need.",
+  },
+];
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
+// Resources Menu Layout
+function NavListMenu() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+ 
+  const renderItems = navListMenuItems.map(
+    ({ icon, title, description, color }, key) => (
+      <a href="#" key={key}>
+        <MenuItem className="flex items-center gap-3 rounded-lg">
+          <div className={`rounded-lg p-5 ${colors[color]}`}>
+            {React.createElement(icon, {
+              strokeWidth: 2,
+              className: "h-6 w-6",
+            })}
+          </div>
+          <div>
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm text-gray-900"
+            >
+              {title}
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              {description}
+            </Typography>
+          </div>
+        </MenuItem>
+      </a>
+    )
+  );
+ 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#123397' }}> {/* Color changed */}
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <DiamondIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
+    <React.Fragment>
+      <Menu
+        open={isMenuOpen}
+        handler={setIsMenuOpen}
+        offset={{ mainAxis: 20 }}
+        placement="bottom"
+        allowHover={true}
+      >
+        <MenuHandler>
+          <Typography as="div" variant="small" className="font-normal">
+            <ListItem
+              className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3"
+              selected={isMenuOpen || isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
+            >
+              <Square3Stack3DIcon className="h-[18px] w-[18px]" />
+              Resources
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform lg:block ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform lg:hidden ${
+                  isMobileMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
+          <ul className="grid grid-cols-4 gap-y-2">{renderItems}</ul>
+        </MenuList>
+      </Menu>
+      <div className="block lg:hidden">
+        <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+      </div>
+    </React.Fragment>
+  );
+}
+ 
+// Large Screen Layout
+function NavList() {
+  return (
+    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        color="blue-gray"
+        className="font-normal"
+      >
+        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3">
+          <CubeTransparentIcon className="h-[18px] w-[18px]" />
+          Blockchain
+        </ListItem>
+      </Typography>
+      <NavListMenu />
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        color="blue-gray"
+        className="font-normal"
+      >
+        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3">
+          <UserCircleIcon className="h-[18px] w-[18px]" />
+          Account
+        </ListItem>
+      </Typography>
+    </List>
+  );
+}
+ 
+
+export function NavbarMenu() {
+  const [openNav, setOpenNav] = React.useState(false);
+ 
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+ 
+  return (
+    <Navbar variant="gradient" color="blue-gray" className="mx-auto max-w-screen-xl from-blue-gray-900 to-blue-gray-800 px-0 py-0">
+      <div className="flex items-center justify-between text-gray-100 bg-gray-900 rounded-lg px-5">
+        <div className="flex items-center">
+        <DiamondIcon/>
+        <Typography
+            className="ml-2"
+            variant="h5"
             noWrap
             component="a"
             href="/"
             sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              ml: 1,
+              align: 'inherit',
               fontFamily: 'Light',
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -58,113 +249,43 @@ function NavBar() {
           >
             Etherrio
           </Typography>
+        </div>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    {/* using BrowserRouter (react-router-dom) for routes in index.js*/}
-                    <Link to={`/${page}`}> 
-                      {page}
-                    </Link>
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <DiamondIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Etherrio
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {/* using BrowserRouter (react-router-dom) for routes in index.js*/}
-                <Link to={`/${page}`}> 
-                    {page}
-                </Link>
-              </Button>
-            ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/src/assets/favicon.svg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+        <div className="hidden lg:block">
+          <NavList />
+        </div>
+        <div className="hidden gap-2 lg:flex ">
+          <Button variant="text" size="sm" color="blue-gray" >
+            Sign In
+          </Button>
+          <Button variant="gradient" size="sm" className="bg-gray-500">
+            Sign Up
+          </Button>
+        </div>
+        <IconButton
+          variant="text"
+          color="blue-gray"
+          className="lg:hidden"
+          onClick={() => setOpenNav(!openNav)}
+        >
+          {openNav ? (
+            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+          ) : (
+            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+          )}
+        </IconButton>
+      </div>
+      <Collapse open={openNav}>
+        <NavList />
+        <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+          <Button variant="outlined" size="sm" color="blue-gray" fullWidth className="text-gray-900">
+            Sign In
+          </Button>
+          <Button variant="gradient" size="sm" fullWidth className="bg-gray-500">
+            Sign Up
+          </Button>
+        </div>
+      </Collapse>
+    </Navbar>
   );
 }
-export default NavBar;
