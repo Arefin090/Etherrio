@@ -55,25 +55,25 @@ const navListMenuItems = [
   {
     color: "orange",
     icon: ChatBubbleOvalLeftIcon,
-    title: "Opportunities",
-    description: "Investment resources",
+    title: "Tokens",
+    description: "See Top Tokens (ERC-20)",
   },
   {
     color: "green",
     icon: UsersIcon,
     title: (
       <div className="flex items-center gap-1">
-        Careers{" "}
+        NFT's{" "}
         <Chip
           size="sm"
           color="green"
           variant="ghost"
-          value="We're hiring!"
+          value="Trending!"
           className="capitalize"
         />
       </div>
     ),
-    description: "We are always looking for talented people. Join us!",
+    description: "Trending NFT's and NFT resources.",
   },
   {
     color: "blue-gray",
@@ -84,14 +84,14 @@ const navListMenuItems = [
   {
     color: "purple",
     icon: RocketLaunchIcon,
-    title: "International opportunities",
-    description: "We are expanding to other countries.",
+    title: "Top Statistics",
+    description: "See the top statistics of the blockchain.",
   },
   {
     color: "teal",
     icon: FaceSmileIcon,
     title: "Knowledge base",
-    description: "Ask questions and get answers from our experts.",
+    description: "Educational library on the world of Ethereum.",
   },
   {
     color: "cyan",
@@ -103,7 +103,7 @@ const navListMenuItems = [
     color: "pink",
     icon: GiftIcon,
     title: "API",
-    description: "Documentation for every single API that you will need.",
+    description: "Documentation for all the API used.",
   },
 ];
 
@@ -207,10 +207,10 @@ function NavList() {
         color="blue-gray"
         className="font-normal"
       >
-        <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3 hover:bg-gray-600">
+        {/* <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3 hover:bg-gray-600">
           <UserCircleIcon className="h-[18px] w-[18px]" />
           Account
-        </ListItem>
+        </ListItem> */}
       </Typography>
     </List>
   );
@@ -255,14 +255,14 @@ export function NavbarMenu() {
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <div className="hidden gap-2 lg:flex ">
+        {/* <div className="hidden gap-2 lg:flex ">
           <Button variant="text" size="sm" color="blue-gray" className="hover:bg-blue-500" >
             Sign In
           </Button>
           <Button variant="gradient" size="sm" className="bg-gray-500 hover:bg-blue-800">
             Sign Up
           </Button>
-        </div>
+        </div> */}
         <IconButton
           variant="text"
           color="blue-gray"
@@ -278,14 +278,14 @@ export function NavbarMenu() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-        <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+        {/* <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
           <Button variant="outlined" size="sm" color="blue-gray" fullWidth className="text-gray-900 hover:bg-blue-500">
             Sign In
           </Button>
           <Button variant="gradient" size="sm" fullWidth className="bg-gray-800 hover:bg-blue-800">
             Sign Up
           </Button>
-        </div>
+        </div> */}
       </Collapse>
     </Navbar>
   );
