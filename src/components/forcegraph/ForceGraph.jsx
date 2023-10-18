@@ -71,10 +71,9 @@ function ReactFlowPro({ strength = -5000, distance = 300, address } = {}) {
                 defaultViewport={{ x: window.innerWidth / 2, y: window.innerHeight / 2, zoom: 0 }}
             >
                 <Panel position="top-left">
-                    <p><b>How to use:</b> Click any node to generate most recent wallet transaction to that node. </p>
-                    <p>Clicking a node again will generate second most recent wallet transactions, then third most recent, etc.</p>
-                    <p>Clicking an edge will display the date and amount of the transaction.</p>
-                    <p>Click Wallet tab to view detailed information</p>
+    
+                    <p>Clicking an edge will display the transaction related info</p>
+
                 </Panel>
                 <Background />
             </ReactFlow>
