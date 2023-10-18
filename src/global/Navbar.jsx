@@ -3,7 +3,6 @@ import {
   Navbar,
   Collapse,
   Typography,
-  Button,
   IconButton,
   List,
   ListItem,
@@ -15,7 +14,6 @@ import {
 } from "@material-tailwind/react";
 import {
   ChevronDownIcon,
-  UserCircleIcon,
   CubeTransparentIcon,
   Bars3Icon,
   XMarkIcon,
@@ -200,7 +198,7 @@ function NavList() {
         </ListItem>
       </Typography>
       <NavListMenu />
-      <Typography
+      {/* <Typography
         as="a"
         href="#"
         variant="small"
@@ -210,8 +208,8 @@ function NavList() {
         {/* <ListItem className="flex items-center gap-2 py-4 pr-4 bg-gray-900 px-3 hover:bg-gray-600">
           <UserCircleIcon className="h-[18px] w-[18px]" />
           Account
-        </ListItem> */}
-      </Typography>
+        </ListItem>
+      </Typography> */}
     </List>
   );
 }
@@ -235,7 +233,6 @@ export function NavbarMenu() {
         <Typography
             className="ml-2"
             variant="h5"
-            noWrap
             component="a"
             href="/"
             sx={{
