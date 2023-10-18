@@ -106,7 +106,7 @@ export default function BalanceAndTransactionTabs({searchInput}) {
           <Tab label="Wallet" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      {value === 0 ? <ForceGraph data={transactionData}/> : <><Balance address={searchInput} /> <TransactionHistory searchInput={searchInput} /></>}
+      {value === 0 ? <ForceGraph data={transactionData} address={searchInput}/> : <><Balance address={searchInput} /> <TransactionHistory searchInput={searchInput} /></>}
     </Box>
   );
 }

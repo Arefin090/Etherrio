@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 
 function Home() {
     const [searchInput, setSearchInput] = useState('');
+    const [isValidAddress, setIsValidAddress] = useState(false);
+
 
     return (
         <div className='flex flex-col min-h-screen'>
@@ -62,8 +64,10 @@ function Home() {
             {/* <Container>
                 <FeaturesSection />
             </Container> */}
-            <SearchBar setSearchInput={setSearchInput} />
-            <BalanceAndTransactionTabs searchInput={searchInput} />
+            <SearchBar setSearchInput={setSearchInput} setIsValidAddress={setIsValidAddress} />
+
+            {isValidAddress && <BalanceAndTransactionTabs searchInput={searchInput} />}
+
         </div>
     );
 }

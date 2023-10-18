@@ -1,10 +1,14 @@
 /* Styling for forcegraph nodes and edges*/
 .node {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  font-size: 30px;
-  border-width: 4px;
+  height: 170px;
+  width: 170px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-width: 8px;
   border-color: #ffffff;
   background-color: #EF686A;
 }
@@ -18,5 +22,5 @@
 }
 
 .edge {
-  font-size: 5px;
+  font-size: 8px;
 }
