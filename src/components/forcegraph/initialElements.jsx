@@ -46,7 +46,7 @@ export const fetchGraphData = async (address) => {
             if (!nodeSet.has(transaction.to_address)) {
                 nodes.push({
                     id: transaction.to_address,
-                    data: { label: `${transaction.from_address.slice(0, 6)}...${transaction.from_address.slice(-4)}` },
+                    data: { label: `${transaction.to_address.slice(0, 6)}...${transaction.to_address.slice(-4)}` },
 
                     position: {
                         x: center.x + radius * Math.cos(angle + Math.PI / transaction.length),
