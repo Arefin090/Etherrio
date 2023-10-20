@@ -1,5 +1,5 @@
 
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: './credentials.env' });
 const express = require('express');
 const neo4j = require('neo4j-driver');
 const app = express();
