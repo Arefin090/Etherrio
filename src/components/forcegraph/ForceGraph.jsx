@@ -10,8 +10,8 @@ const nodeOrigin = [0.5, 0.5];
 const defaultEdgeOptions = { style: { stroke: '#ff66aa', strokeWidth: 3 } };
 
 function ReactFlowPro({ strength = -5000, distance = 300, address } = {}) {
-    const [nodes, setNodes] = useState([]);
-    const [edges, setEdges] = useState([]);
+    const [nodes, setNodes, onNodesChange] = useNodesState([]);
+    const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
     useForceLayout({ strength, distance });
 
@@ -56,12 +56,14 @@ function ReactFlowPro({ strength = -5000, distance = 300, address } = {}) {
     );
 
     const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
-
+    
     return (
         <div style={{ width: "95%", height: "60vh" }}>
             <ReactFlow 
                 nodes={nodes}
                 edges={edges}
+                onNodesChange={onNodesChange} 
+                onEdgesChange={onEdgesChange} 
                 proOptions={proOptions} 
                 onConnect={onConnect} 
                 nodeOrigin={nodeOrigin} 
@@ -69,6 +71,7 @@ function ReactFlowPro({ strength = -5000, distance = 300, address } = {}) {
                 onEdgeClick={onEdgeClick} 
                 defaultEdgeOptions={defaultEdgeOptions} 
                 defaultViewport={{ x: window.innerWidth / 2, y: window.innerHeight / 2, zoom: 0 }}
+
             >
                 <Panel position="top-left">
     
